@@ -1,3 +1,5 @@
+import pandas as pd
+
 def poiEmails():
     email_list = ["kenneth_lay@enron.net",    
             "kenneth_lay@enron.com",
@@ -92,3 +94,10 @@ def poiEmails():
             "chris.loehr@enron.com"
         ]
     return email_list
+
+
+nameList = pd.read_csv("poi_names.txt")
+nameList = pd.DataFrame(nameList)
+
+print(nameList)
+
