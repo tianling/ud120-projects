@@ -14,9 +14,11 @@
     enron_data["SKILLING JEFFREY K"]["bonus"] = 5600000
     
 """
+from __future__ import division
 
 import pickle
 import pandas as pd,numpy as np
+
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
@@ -40,30 +42,42 @@ type(enron_data)
 #
 # print(Lay)
 
-nameLay = "LAY"
-nameSkilling = "SKILLING"
-nameFastow = "FASTOW"
+#nameLay = "LAY"
+#nameSkilling = "SKILLING"
+#nameFastow = "FASTOW"
 
 dataFrameEn = pd.DataFrame(enron_data)
-dataSeries = []
-print(dataSeries)
+#dataSeries = []
+#print(dataSeries)
 
-dataLay = dataFrameEn[[name for name in dataFrameEn.columns if nameLay in name or nameSkilling in name or nameFastow in name]]
-print(dataLay)
-for name in dataLay:
-    # print(dataLay[name]["total_payments"])
-    # print(pd.Series([dataLay[name]["total_payments"]]))
-    dataSeries.append(dataLay[name]["total_payments"])
+#dataLay = dataFrameEn[[name for name in dataFrameEn.columns if nameLay in name or nameSkilling in name or nameFastow in name]]
+#print(dataLay)
+#for name in dataLay:
+ #   dataSeries.append(dataLay[name]["total_payments"])
 
-dataSeries = pd.Series(dataSeries)
+#dataSeries = pd.Series(dataSeries)
 
-print(dataSeries.max())
-# dataSkilling = dataFrameEn[[name for name in dataFrameEn.columns if nameSkilling in name]]['total_payments']
-# dataFastow = dataFrameEn[[name for name in dataFrameEn.columns if nameFastow in name]]['total_payments']
-#
-# dataSeries = pd.Series[np.array(dataLay,dataSkilling,dataFastow)]
-#
-# print(dataSeries)
+#print(dataSeries.max())
+
+
+
+
+dataSalary = dataFrameEn[[name for name in dataFrameEn.columns if dataFrameEn[name]["poi"] == True and dataFrameEn[name]["total_payments"] == "NaN"]]
+total = 0;
+for salaryName in dataSalary:
+    total += 1
+    
+count = 0
+for name in dataFrameEn:
+    count += 1
+    
+print(count)
+print(total+10)
+
+percent = total/count
+
+print(percent)
+
 
 
 
